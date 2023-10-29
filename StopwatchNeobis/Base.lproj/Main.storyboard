@@ -147,7 +147,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lip-hh-XjO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1096.9465648854962" y="-270.42253521126764"/>
+            <point key="canvasLocation" x="1111" y="287"/>
         </scene>
         <!--Stopwatch Segment View Controller-->
         <scene sceneID="gG6-ko-hbv">
@@ -157,20 +157,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="335" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="stopwatch" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="edr-zm-BDg">
-                                <rect key="frame" x="165" y="178" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nem-bi-OmL">
+                                <rect key="frame" x="55" y="147" width="224" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="5MT-pv-HJI"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="224" id="cDh-7n-cJY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nT-Rg-OgN">
+                                <rect key="frame" x="134.66666666666666" y="399" width="65.666666666666657" height="55"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.94999999999999996"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="x7M-cK-q8B"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="xxA-BL-ekJ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="pauseIcon"/>
+                                <connections>
+                                    <action selector="pauseAction:" destination="pe4-FG-aur" eventType="touchUpInside" id="14x-Kd-vCL"/>
+                                    <action selector="pauseAction:" destination="3OE-3g-CaV" eventType="touchUpInside" id="rQc-qJ-HXs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AzK-Bd-zA8">
+                                <rect key="frame" x="216.33333333333334" y="399" width="63.666666666666657" height="55"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="playIcon"/>
+                                <connections>
+                                    <action selector="playAction:" destination="3OE-3g-CaV" eventType="touchUpInside" id="lak-bv-Zjf"/>
+                                    <action selector="startAction:" destination="pe4-FG-aur" eventType="touchUpInside" id="LPf-fu-5JI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFX-ek-4Fk">
+                                <rect key="frame" x="55" y="399" width="61.666666666666657" height="55"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="stopIcon"/>
+                                <connections>
+                                    <action selector="stopAction:" destination="3OE-3g-CaV" eventType="touchUpInside" id="7S3-LS-LR6"/>
+                                    <action selector="stopAction:" destination="pe4-FG-aur" eventType="touchUpInside" id="Lnd-Po-Sw5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="G7N-Si-U9o"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Nem-bi-OmL" firstAttribute="leading" secondItem="G7N-Si-U9o" secondAttribute="leading" constant="55" id="319-um-W5S"/>
+                            <constraint firstItem="dFX-ek-4Fk" firstAttribute="top" secondItem="9nT-Rg-OgN" secondAttribute="top" id="4sr-RQ-B1K"/>
+                            <constraint firstItem="AzK-Bd-zA8" firstAttribute="top" secondItem="9nT-Rg-OgN" secondAttribute="top" id="7MH-bh-kgr"/>
+                            <constraint firstItem="9nT-Rg-OgN" firstAttribute="top" secondItem="Nem-bi-OmL" secondAttribute="bottom" constant="195" id="7oZ-HC-eoM"/>
+                            <constraint firstItem="dFX-ek-4Fk" firstAttribute="width" secondItem="9nT-Rg-OgN" secondAttribute="width" multiplier="0.942408" id="8Gv-RM-c3j"/>
+                            <constraint firstItem="dFX-ek-4Fk" firstAttribute="height" secondItem="9nT-Rg-OgN" secondAttribute="height" id="Hev-UR-Nh7"/>
+                            <constraint firstItem="dFX-ek-4Fk" firstAttribute="bottom" secondItem="9nT-Rg-OgN" secondAttribute="bottom" id="Iyk-gz-w9E"/>
+                            <constraint firstItem="AzK-Bd-zA8" firstAttribute="bottom" secondItem="9nT-Rg-OgN" secondAttribute="bottom" id="LKD-ci-IBS"/>
+                            <constraint firstItem="AzK-Bd-zA8" firstAttribute="height" secondItem="9nT-Rg-OgN" secondAttribute="height" id="SXz-xl-CFe"/>
+                            <constraint firstItem="G7N-Si-U9o" firstAttribute="trailing" secondItem="Nem-bi-OmL" secondAttribute="trailing" constant="56" id="UrK-6D-8na"/>
+                            <constraint firstItem="dFX-ek-4Fk" firstAttribute="leading" secondItem="G7N-Si-U9o" secondAttribute="leading" constant="55" id="VY3-t2-jRv"/>
+                            <constraint firstItem="9nT-Rg-OgN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dFX-ek-4Fk" secondAttribute="trailing" constant="18" id="deS-cO-ifE"/>
+                            <constraint firstItem="Nem-bi-OmL" firstAttribute="top" secondItem="G7N-Si-U9o" secondAttribute="top" constant="88" id="e11-0b-OrL"/>
+                            <constraint firstItem="AzK-Bd-zA8" firstAttribute="leading" secondItem="9nT-Rg-OgN" secondAttribute="trailing" constant="16" id="gZV-Q2-I9C"/>
+                            <constraint firstItem="G7N-Si-U9o" firstAttribute="trailing" secondItem="AzK-Bd-zA8" secondAttribute="trailing" constant="55" id="ioY-cL-L2M"/>
+                            <constraint firstItem="G7N-Si-U9o" firstAttribute="bottom" secondItem="9nT-Rg-OgN" secondAttribute="bottom" constant="112" id="oGx-kz-uZB"/>
+                            <constraint firstItem="9nT-Rg-OgN" firstAttribute="centerX" secondItem="G7N-Si-U9o" secondAttribute="centerX" id="tMf-Zo-Zc6"/>
+                            <constraint firstItem="AzK-Bd-zA8" firstAttribute="width" secondItem="9nT-Rg-OgN" secondAttribute="width" multiplier="0.972973" id="vtX-qG-i5e"/>
+                            <constraint firstItem="Nem-bi-OmL" firstAttribute="leading" secondItem="G7N-Si-U9o" secondAttribute="leading" constant="55" id="xlX-5g-zS8"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pauseButton" destination="9nT-Rg-OgN" id="Aox-fR-7DD"/>
+                        <outlet property="startButton" destination="AzK-Bd-zA8" id="CSc-wd-YBE"/>
+                        <outlet property="stopButton" destination="dFX-ek-4Fk" id="OT0-8R-7qf"/>
+                        <outlet property="timeLabel" destination="Nem-bi-OmL" id="upn-gh-xYt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m0J-vM-bCB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1097" y="317"/>
+            <point key="canvasLocation" x="1166" y="-287"/>
         </scene>
     </scenes>
     <resources>

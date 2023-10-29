@@ -99,9 +99,9 @@ class timerSegmentViewController: UIViewController, UIPickerViewDataSource, UIPi
     }
     
     
-    @IBAction func playAction(_ sender: UIButton) {
+    @IBAction func startAction(_ sender: UIButton) {
         if (!isTimerRunning){
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)     //slecter has to be an objc
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)     //slecter has to be an objc
         isTimerRunning = true
         startButton.isEnabled = false
         pauseButton.isEnabled = true
