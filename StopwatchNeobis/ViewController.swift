@@ -10,7 +10,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var segmentOutlet: UISegmentedControl!
     
     @IBOutlet weak var timerSegmentView: UIView!
-    
     @IBOutlet weak var stopwatchSegmentView: UIView!
     
     override func viewDidLoad() {

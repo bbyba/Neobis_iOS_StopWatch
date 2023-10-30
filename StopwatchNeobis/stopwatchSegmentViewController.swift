@@ -24,10 +24,9 @@ class stopwatchSegmentViewController: UIViewController {
     }
     
     @objc func updateStopwatch(){
-        if totalSeconds == 0 {
-            totalSeconds += 1
-            updateTimeLabel()
-        }
+//        if totalSeconds == 0   don't need the if loop cuz we have to increment in any situation in a stopwatch
+        totalSeconds += 1
+        updateTimeLabel()
     }
     
     func updateTimeLabel(){
@@ -41,6 +40,9 @@ class stopwatchSegmentViewController: UIViewController {
     @IBAction func stopAction(_ sender: UIButton) {
         if isTimerRunning{
             timer.invalidate()
+            //reset the time label after pressing or else it will be a pause button
+            totalSeconds = 0
+            updateTimeLabel()
             startButton.isEnabled = true    //only need start (reset)
             pauseButton.isEnabled = false
             stopButton.isEnabled = false

@@ -28,7 +28,7 @@ class timerSegmentViewController: UIViewController, UIPickerViewDataSource, UIPi
     }
     
     
-    func updateTimerLabel() {
+    @objc func updateTimerLabel() {
         let hours = totalSeconds / 3600
         let minutes = (totalSeconds % 3600) / 60
         let seconds = (totalSeconds % 60) % 60
@@ -37,8 +37,8 @@ class timerSegmentViewController: UIViewController, UIPickerViewDataSource, UIPi
     }
     
     //PickerVIEW
-     @objc func numberOfComponents(in pickerView: UIPickerView) -> Int {
-            return 3 // Number of components in the picker view
+    @objc func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 3 // Number of components in the picker view
     }
     
     @objc func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
@@ -58,10 +58,10 @@ class timerSegmentViewController: UIViewController, UIPickerViewDataSource, UIPi
         let hours = pickerView.selectedRow(inComponent: 0)
         let minutes = pickerView.selectedRow(inComponent: 1)
         let seconds = pickerView.selectedRow(inComponent: 2)
- 
+        
         totalSeconds = hours * 3600 + minutes * 60 + seconds
         updateTimerLabel()
-        }
+    }
     
     @objc func updateTimer() {      //for the the time tracking         //for the selector
         if totalSeconds > 0 {       //continue decreasing the total time left
@@ -94,8 +94,6 @@ class timerSegmentViewController: UIViewController, UIPickerViewDataSource, UIPi
             pauseButton.isEnabled = false
             stopButton.isEnabled = true
         }
-        
-        
     }
     
     
@@ -108,4 +106,5 @@ class timerSegmentViewController: UIViewController, UIPickerViewDataSource, UIPi
         stopButton.isEnabled = true
         }
     }
+    
 }
