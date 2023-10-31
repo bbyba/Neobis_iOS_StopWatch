@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StopwatchNeobis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1kM-JZ-VHs">
-                                <rect key="frame" x="109" y="139" width="212" height="34"/>
+                                <rect key="frame" x="278" y="100" width="212" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="9lY-qr-Ard"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="212" id="OcG-cY-0oN"/>
@@ -27,11 +27,11 @@
                                     <segment title="Stopwatch"/>
                                 </segments>
                                 <connections>
-                                    <action selector="segmentAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="6sj-rx-eYC"/>
+                                    <action selector="segmentAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="3FX-mF-ly4"/>
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Clb-om-aNS">
-                                <rect key="frame" x="29" y="197" width="372" height="600"/>
+                                <rect key="frame" x="198" y="158" width="372" height="600"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="372" id="dpN-pv-Crf"/>
                                     <constraint firstAttribute="height" constant="600" id="lSe-jQ-OaC"/>
@@ -41,7 +41,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RMu-mX-79s">
-                                <rect key="frame" x="29" y="197" width="372" height="600"/>
+                                <rect key="frame" x="198" y="158" width="372" height="600"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="372" id="BVz-Nv-2X7"/>
                                     <constraint firstAttribute="height" constant="600" id="ogL-VH-T4B"/>
@@ -51,7 +51,7 @@
                                 </connections>
                             </containerView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timer" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Xgm-aF-Eaj">
-                                <rect key="frame" x="154.66666666666666" y="60" width="120.99999999999997" height="64"/>
+                                <rect key="frame" x="323.5" y="20.5" width="121" height="64.5"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="121" id="MjY-O3-7yH"/>
@@ -73,25 +73,26 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="segmentOutlet" destination="1kM-JZ-VHs" id="Bnh-aK-tBv"/>
-                        <outlet property="stopwatchSegmentView" destination="RMu-mX-79s" id="rSz-VC-p8R"/>
-                        <outlet property="timerSegmentView" destination="Clb-om-aNS" id="v4b-aq-duM"/>
+                        <outlet property="segmentedControl" destination="1kM-JZ-VHs" id="3Ws-8e-gJc"/>
+                        <outlet property="stopwatchView" destination="RMu-mX-79s" id="ySz-eG-UVX"/>
+                        <outlet property="timerImage" destination="Xgm-aF-Eaj" id="gPr-Pk-OJ9"/>
+                        <outlet property="timerView" destination="Clb-om-aNS" id="EwL-mu-5hi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="111.62790697674419" y="-2.5751072961373391"/>
         </scene>
-        <!--Timer Segment View Controller-->
+        <!--Timer View Controller-->
         <scene sceneID="s2h-l8-rPM">
             <objects>
-                <viewController id="3OE-3g-CaV" customClass="timerSegmentViewController" customModule="StopwatchNeobis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3OE-3g-CaV" customClass="TimerViewController" customModule="StopwatchNeobis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uTe-63-1O7">
                         <rect key="frame" x="0.0" y="0.0" width="372" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chS-TP-VOM">
-                                <rect key="frame" x="154" y="393" width="64" height="55"/>
+                                <rect key="frame" x="154" y="354" width="64" height="55"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.94999999999999996"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="62" id="Qm0-QK-11G"/>
@@ -104,7 +105,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1s-po-BSU">
-                                <rect key="frame" x="74" y="393" width="63.666666666666657" height="52"/>
+                                <rect key="frame" x="74" y="354" width="64" height="52"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="stopIcon"/>
                                 <connections>
@@ -112,14 +113,14 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mU8-uE-X2B">
-                                <rect key="frame" x="0.0" y="219" width="372" height="162"/>
+                                <rect key="frame" x="0.0" y="180" width="372" height="162"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="372" id="c68-ip-8L2"/>
                                     <constraint firstAttribute="height" constant="162" id="ciu-4Y-LQM"/>
                                 </constraints>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFf-Gj-GxH">
-                                <rect key="frame" x="74" y="137" width="224" height="60"/>
+                                <rect key="frame" x="74" y="98" width="224" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="wai-pe-XnX"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="224" id="xwi-Re-Cpe"/>
@@ -129,7 +130,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mlh-Jk-Qmx">
-                                <rect key="frame" x="236.33333333333334" y="393" width="61.666666666666657" height="55"/>
+                                <rect key="frame" x="236" y="354" width="62" height="55"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="playIcon"/>
                                 <connections>
@@ -162,10 +163,10 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="pauseButton" destination="chS-TP-VOM" id="fov-d7-CUf"/>
-                        <outlet property="startButton" destination="Mlh-Jk-Qmx" id="Wse-0A-6R8"/>
-                        <outlet property="stopButton" destination="f1s-po-BSU" id="mAi-Ul-O05"/>
-                        <outlet property="timePicker" destination="mU8-uE-X2B" id="9KV-gY-3Iz"/>
+                        <outlet property="pauseButton" destination="chS-TP-VOM" id="8BA-IL-LBc"/>
+                        <outlet property="startButton" destination="Mlh-Jk-Qmx" id="Nbu-mL-bFR"/>
+                        <outlet property="stopButton" destination="f1s-po-BSU" id="e6J-uR-TeF"/>
+                        <outlet property="timePicker" destination="mU8-uE-X2B" id="6DK-26-R2K"/>
                         <outlet property="timerLabel" destination="pFf-Gj-GxH" id="q7g-PI-14j"/>
                     </connections>
                 </viewController>
@@ -173,16 +174,16 @@
             </objects>
             <point key="canvasLocation" x="1030" y="-239"/>
         </scene>
-        <!--Stopwatch Segment View Controller-->
+        <!--Stopwatch View Controller-->
         <scene sceneID="gG6-ko-hbv">
             <objects>
-                <viewController id="pe4-FG-aur" customClass="stopwatchSegmentViewController" customModule="StopwatchNeobis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pe4-FG-aur" customClass="StopwatchViewController" customModule="StopwatchNeobis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Udi-LB-loI">
                         <rect key="frame" x="0.0" y="0.0" width="372" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rvi-mj-asg">
-                                <rect key="frame" x="154" y="411" width="64" height="51.666666666666686"/>
+                                <rect key="frame" x="144.5" y="372" width="83" height="51.5"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.94999999999999996"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51.670000000000002" id="Prd-uE-OA0"/>
@@ -191,30 +192,27 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="pauseIcon"/>
                                 <connections>
-                                    <action selector="pauseAction:" destination="pe4-FG-aur" eventType="touchUpInside" id="9sw-qc-hh2"/>
-                                    <action selector="pauseAction:" destination="3OE-3g-CaV" eventType="touchUpInside" id="F9E-wz-QtF"/>
+                                    <action selector="pauseAction:" destination="pe4-FG-aur" eventType="touchUpInside" id="Adc-p0-cnH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FmP-MC-7dP">
-                                <rect key="frame" x="236.33333333333334" y="411" width="61.666666666666657" height="55"/>
+                                <rect key="frame" x="217.5" y="372" width="80.5" height="55"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="playIcon"/>
                                 <connections>
-                                    <action selector="startAction:" destination="3OE-3g-CaV" eventType="touchUpInside" id="gPd-LU-mKx"/>
-                                    <action selector="startAction:" destination="pe4-FG-aur" eventType="touchUpInside" id="qYI-40-zA4"/>
+                                    <action selector="startAction:" destination="pe4-FG-aur" eventType="touchUpInside" id="BxI-5M-7qc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQY-1Z-RZc">
-                                <rect key="frame" x="74" y="411" width="63.666666666666657" height="52"/>
+                                <rect key="frame" x="74" y="372" width="83" height="52"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="stopIcon"/>
                                 <connections>
-                                    <action selector="stopAction:" destination="3OE-3g-CaV" eventType="touchUpInside" id="Bks-qa-ftg"/>
-                                    <action selector="stopAction:" destination="pe4-FG-aur" eventType="touchUpInside" id="R5e-cv-jhJ"/>
+                                    <action selector="stopAction:" destination="pe4-FG-aur" eventType="touchUpInside" id="0yK-Rj-z68"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gum-e9-9vs">
-                                <rect key="frame" x="74" y="155" width="224" height="60"/>
+                                <rect key="frame" x="74" y="116" width="224" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="224" id="8i6-Yv-suy"/>
                                     <constraint firstAttribute="height" constant="60" id="Rrf-ru-DKc"/>
@@ -244,10 +242,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="pauseButton" destination="Rvi-mj-asg" id="8Pp-ek-Xyr"/>
-                        <outlet property="startButton" destination="FmP-MC-7dP" id="AAO-mc-lxD"/>
-                        <outlet property="stopButton" destination="DQY-1Z-RZc" id="uEb-lp-Dfx"/>
-                        <outlet property="timeLabel" destination="Gum-e9-9vs" id="mti-8y-Msq"/>
+                        <outlet property="pauseButton" destination="Rvi-mj-asg" id="5x5-HT-IYL"/>
+                        <outlet property="startButton" destination="FmP-MC-7dP" id="KSq-8w-6e1"/>
+                        <outlet property="stopButton" destination="DQY-1Z-RZc" id="6QO-j8-Gv8"/>
+                        <outlet property="timeLabel" destination="Gum-e9-9vs" id="ehg-yA-jFh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m0J-vM-bCB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -256,9 +254,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pauseIcon" width="37.666667938232422" height="37.666667938232422"/>
-        <image name="playIcon" width="37.666667938232422" height="37.666667938232422"/>
-        <image name="stopIcon" width="37.666667938232422" height="37.666667938232422"/>
+        <image name="pauseIcon" width="56.5" height="56.5"/>
+        <image name="playIcon" width="56.5" height="56.5"/>
+        <image name="stopIcon" width="56.5" height="56.5"/>
         <image name="timer" catalog="system" width="128" height="123"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

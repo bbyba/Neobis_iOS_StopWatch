@@ -1,5 +1,5 @@
 //
-//  timerSegmentViewController.swift
+//  TimerViewController.swift
 //  StopwatchNeobis
 //
 //  Created by Burte Bayaraa on 2023.10.23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class timerSegmentViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var timePicker: UIPickerView!
@@ -24,7 +24,6 @@ class timerSegmentViewController: UIViewController, UIPickerViewDataSource, UIPi
         super.viewDidLoad()
         timePicker.dataSource = self
         timePicker.delegate = self
-        // Do any additional setup after loading the view.
     }
     
     
@@ -86,7 +85,6 @@ class timerSegmentViewController: UIViewController, UIPickerViewDataSource, UIPi
         stopButton.isEnabled = false
     }
     
-    
     @IBAction func pauseAction(_ sender: UIButton) {
         if isTimerRunning{
             timer.invalidate()
@@ -96,15 +94,13 @@ class timerSegmentViewController: UIViewController, UIPickerViewDataSource, UIPi
         }
     }
     
-    
     @IBAction func startAction(_ sender: UIButton) {
         if (!isTimerRunning){
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)     //slecter has to be an objc
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)     //selecter has to be an objc
         isTimerRunning = true
         startButton.isEnabled = false
         pauseButton.isEnabled = true
         stopButton.isEnabled = true
         }
     }
-    
 }

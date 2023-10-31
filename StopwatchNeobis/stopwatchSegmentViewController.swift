@@ -1,5 +1,5 @@
 //
-//  stopwatchSegmentViewController.swift
+//  StopwatchViewController.swift
 //  StopwatchNeobis
 //
 //  Created by Burte Bayaraa on 2023.10.27.
@@ -7,8 +7,9 @@
 
 import UIKit
 
-class stopwatchSegmentViewController: UIViewController {
+class StopwatchViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
+    
     
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var pauseButton: UIButton!
@@ -24,7 +25,7 @@ class stopwatchSegmentViewController: UIViewController {
     }
     
     @objc func updateStopwatch(){
-//        if totalSeconds == 0   don't need the if loop cuz we have to increment in any situation in a stopwatch
+//        if totalSeconds == 0   don't need the if loop cuz we have to increment in any situation
         totalSeconds += 1
         updateTimeLabel()
     }
@@ -35,7 +36,6 @@ class stopwatchSegmentViewController: UIViewController {
         let seconds = totalSeconds % 60
         timeLabel.text = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
-    
     
     @IBAction func stopAction(_ sender: UIButton) {
         if isTimerRunning{
@@ -49,7 +49,6 @@ class stopwatchSegmentViewController: UIViewController {
         }
     }
     
-    
     @IBAction func pauseAction(_ sender: UIButton) {
         if isTimerRunning{
             timer.invalidate()
@@ -58,7 +57,6 @@ class stopwatchSegmentViewController: UIViewController {
             stopButton.isEnabled = true
         }
     }
-    
     
     @IBAction func startAction(_ sender: UIButton) {
         if (!isTimerRunning){
@@ -69,7 +67,4 @@ class stopwatchSegmentViewController: UIViewController {
             stopButton.isEnabled = true
         }
     }
-    
-    
-    
 }
