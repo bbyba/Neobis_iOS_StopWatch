@@ -1,6 +1,6 @@
 # Neobis_iOS_StopWatch
 # Description:
-This project offers users two functionalities: a Stopwatch and a Timer, between which users can easily switch.
+This project offers users two functionalities: a Stopwatch and a Timer
 
 The stopwatch features three buttons (Stop, Pause, Start)
   *	Stop button: Stops the timer and resets it to zero.
@@ -20,6 +20,12 @@ The timer also includes three buttons (Stop, Pause, Start), along with fields fo
 *	UIButtons
 *	Container View
 
+# Installation & Usage
+* Clone the repository to your local development environment.
+* Open the project in Xcode or your preferred environment.
+* Build and run the application on your iOS simulator or physical device.
+The Timer/Stopwatch app offers effortless stopwatch and timer functionality. Users can easily switch between modes through segmented contro and accurately measure time intervals.
+
 # **Testing:**
 * Launch the application on the simulator on MacBook/iMac.
 * Review the launch report for any bugs.
@@ -29,7 +35,5 @@ The timer also includes three buttons (Stop, Pause, Start), along with fields fo
 
 
 # Design
-![Simulator Screenshot - iPhone 15 Pro Max - 2023-10-31 at 14 37 51](https://github.com/bbyba/Neobis_iOS_StopWatch/assets/70840018/b834a775-93a9-43b5-9ceb-68799a73b8a7)
-![Simulator Screenshot - iPhone 15 Pro Max - 2023-10-31 at 14 30 12](https://github.com/bbyba/Neobis_iOS_StopWatch/assets/70840018/1a3343f1-533b-4756-924f-5cdaaac572b9)
-
+<img width="485" alt="Screenshot 2023-10-31 at 14 50 37" src="https://github.com/bbyba/Neobis_iOS_StopWatch/assets/70840018/071116cf-ae74-4ee2-9820-fda4e073bd29">
 
